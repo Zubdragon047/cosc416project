@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,10 +9,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sidewaysAcceleration = 2f;
     [SerializeField] private float maxSpeed = 10f;
 
+    // for the speed boost & mud pit
+    private float originalForwardAcceleration;
+    private float originalMaxSpeed;
+    private bool isSpeedBoosted = false;
+    private bool isSlowed = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        originalForwardAcceleration = forwardAcceleration;
+        originalMaxSpeed = maxSpeed;
     }
 
     // Update is called once per frame
@@ -28,6 +36,55 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(inputforward * forwardAcceleration);
         }
         rb.AddForce(inputsideways * sidewaysAcceleration);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Triggered with: " + other.gameObject.name); // Debugging
+        if (other.CompareTag("SpeedBoost"))
+        {
+            ApplySpeedBoost();
+        }
+        else if (other.CompareTag("MudPit"))
+        {
+            ApplyMudSlowdown();
+        }
+    }
+
+    private void ApplySpeedBoost()
+    {
+        if (!isSpeedBoosted)
+        {
+            isSpeedBoosted = true;
+            forwardAcceleration = originalForwardAcceleration * 1.5f; // Increase acceleration
+            maxSpeed = originalMaxSpeed * 1.5f; // Increase max speed
+
+            Vector3 boostDirection = new(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+            rb.AddForce(boostDirection.normalized * 10f, ForceMode.Impulse);
+
+            StartCoroutine(ResetSpeedAfterDelay(2f));
+        }
+    }
+
+    private void ApplyMudSlowdown()
+    {
+        if (!isSlowed)
+        {
+            isSlowed = true;
+            forwardAcceleration = originalForwardAcceleration * 0.75f; // Reduce acceleration
+            maxSpeed = originalMaxSpeed * 0.5f; // Reduce max speed
+
+            StartCoroutine(ResetSpeedAfterDelay(2f));
+        }
+    }
+
+    private IEnumerator ResetSpeedAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        forwardAcceleration = originalForwardAcceleration;
+        maxSpeed = originalMaxSpeed;
+        isSpeedBoosted = false;
+        isSlowed = false;
     }
 
 }
