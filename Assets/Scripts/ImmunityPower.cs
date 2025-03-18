@@ -15,4 +15,9 @@ public class ImmunityPower : MonoBehaviour
     }
 
     //can add OnTriggerEnter for when player hits it? would use instance of GameManager
+
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 }
