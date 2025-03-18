@@ -14,5 +14,5 @@ public class ImmunityPower : MonoBehaviour
         transform.Rotate(0, rotateSpeed, 0, Space.World);
     }
 
-    //can add OnTriggerEnter for when player hits it?
+    //can add OnTriggerEnter for when player hits it? would use instance of GameManager
 }
