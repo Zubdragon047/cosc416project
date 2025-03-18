@@ -259,9 +259,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager: {fileID: 696041836}
   rb: {fileID: 2082417506}
-  forwardAcceleration: 10
-  sidewaysAcceleration: 5
-  maxSpeed: 10
+  forwardAcceleration: 15
+  sidewaysAcceleration: 7
+  maxSpeed: 15
 --- !u!114 &696041836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 1622192960}
   serializedVersion: 2
   m_LocalRotation: {x: 0.33147785, y: 0, z: 0, w: 0.943463}
-  m_LocalPosition: {x: 5.17, y: 10.62, z: -13.9}
+  m_LocalPosition: {x: 5.17, y: 5.94, z: -8.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
