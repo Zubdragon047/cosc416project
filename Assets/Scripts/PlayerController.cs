@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     private bool isSpeedBoosted = false;
     private bool isSlowed = false;
 
+    // for the immunity power Update
+    private bool immunityActivated = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +44,13 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered with: " + other.gameObject.name); // Debugging
+
+        if(other.CompareTag("ImmunityPower"))
+        {
+            immunityActivated = true;
+            ApplyImmunityBoost();
+        }
+        
         if (other.CompareTag("SpeedBoost"))
         {
             ApplySpeedBoost();
@@ -49,6 +59,18 @@ public class PlayerController : MonoBehaviour
         {
             ApplyMudSlowdown();
         }
+    }
+
+    private void ApplyImmunityBoost()
+    {
+        forwardAcceleration = originalForwardAcceleration * 1.2f; // Increase acceleration
+        maxSpeed = originalMaxSpeed * 1.2f; // Increase max speed
+
+        Vector3 boostDirection = new(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        rb.AddForce(boostDirection.normalized * 10f, ForceMode.Impulse);
+
+        StartCoroutine(ResetSpeedAfterDelayFromImmunity(4f));
+        
     }
 
     private void ApplySpeedBoost()
@@ -68,7 +90,11 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMudSlowdown()
     {
-        if (!isSlowed)
+        if(immunityActivated)
+        {
+            return;
+        }
+        else if (!isSlowed)
         {
             isSlowed = true;
             forwardAcceleration = originalForwardAcceleration * 0.75f; // Reduce acceleration
@@ -85,6 +111,14 @@ public class PlayerController : MonoBehaviour
         maxSpeed = originalMaxSpeed;
         isSpeedBoosted = false;
         isSlowed = false;
+    }
+
+    private IEnumerator ResetSpeedAfterDelayFromImmunity(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        forwardAcceleration = originalForwardAcceleration;
+        maxSpeed = originalMaxSpeed;
+        immunityActivated = false;
     }
 
 }
