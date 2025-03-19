@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         if(other.CompareTag("ImmunityPower"))
         {
             immunityActivated = true;
+            Destroy(other.gameObject);
             ApplyImmunityBoost();
         }
         
