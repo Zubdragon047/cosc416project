@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float forwardAcceleration = 5f;
     [SerializeField] private float sidewaysAcceleration = 2f;
     [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] private float rotationTorque = 5f;
 
     // for the speed boost & mud pit
     private float originalForwardAcceleration;
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         originalForwardAcceleration = forwardAcceleration;
         originalMaxSpeed = maxSpeed;
+
+        rb.centerOfMass = new Vector3(0.5f, 0, 0);
     }
 
     // Update is called once per frame
@@ -39,6 +43,11 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(inputforward * forwardAcceleration);
         }
         rb.AddForce(inputsideways * sidewaysAcceleration);
+    }
+
+    public void RotatePlayer(int rotate)
+    {
+        rb.AddTorque(new Vector3(0, 0, rotate * rotationTorque));
     }
 
     private void OnTriggerEnter(Collider other)
