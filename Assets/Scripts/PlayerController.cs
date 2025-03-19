@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private InputManager inputManager;
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float forwardAcceleration = 5f;
-    [SerializeField] private float sidewaysAcceleration = 2f;
-    [SerializeField] private float maxSpeed = 10f;
-    [SerializeField] private float rotationTorque = 5f;
+    [SerializeField] private float forwardAcceleration = 20f;
+    [SerializeField] private float sidewaysAcceleration = 7f;
+    [SerializeField] private float maxSpeed = 15f;
+    [SerializeField] private float rotationTorque = 3f;
 
     // for the speed boost & mud pit
     private float originalForwardAcceleration;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         originalForwardAcceleration = forwardAcceleration;
         originalMaxSpeed = maxSpeed;
 
-        rb.centerOfMass = new Vector3(0.5f, 0, 0);
+        rb.centerOfMass = new Vector3(0.4f, 0, 0);
     }
 
     // Update is called once per frame
