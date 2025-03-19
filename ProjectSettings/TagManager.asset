@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MudPit
   - SpeedBoost
+  - ImmunityPower
   layers:
   - Default
   - TransparentFX
