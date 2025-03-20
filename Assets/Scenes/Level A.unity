@@ -434,7 +434,7 @@ PrefabInstance:
     - target: {fileID: 2474432765367741093, guid: 530e4493877e93840a8698b49cc14649, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 13400000, guid: 36eeaaa34ae4fbd488dfb4951f7266f1, type: 2}
     - target: {fileID: 8766222552290888532, guid: 530e4493877e93840a8698b49cc14649, type: 3}
       propertyPath: m_Name
       value: FullTrackRampSmall
@@ -1473,7 +1473,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
 --- !u!4 &231875072 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4541728380743575864, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1420123634247185528, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
   m_PrefabInstance: {fileID: 231875071}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &249350866
