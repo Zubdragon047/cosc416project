@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         originalForwardAcceleration = forwardAcceleration;
         originalMaxSpeed = maxSpeed;
 
-        rb.centerOfMass = new Vector3(0.4f, 0, 0);
+        rb.centerOfMass = new Vector3(0, -0.4f, 0);
     }
 
     // Update is called once per frame
