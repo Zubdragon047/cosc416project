@@ -9,7 +9,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float forwardAcceleration = 20f;
     [SerializeField] private float sidewaysAcceleration = 7f;
     [SerializeField] private float maxSpeed = 15f;
+    // for the speed boost
+    [SerializeField] private float increasedAcceleration = 1.2f;
+    [SerializeField] private float increasedSpeed = 1.2f;
+    [SerializeField] private float SpeedBoostImpulse = 10f;
+    // for the mud pit
+    [SerializeField] private float reducedAcceleration = 0.75f;
+    [SerializeField] private float reducedMaxSpeed = 0.75f;
     [SerializeField] private float rotationTorque = 3f;
+    // for the immunity boost
+    [SerializeField] private float immunityAcceleration = 1.2f;
+    [SerializeField] private float immunitySpeed = 1.2f;
+    [SerializeField] private float immunityBoostImpulse = 10f;
 
     // for the speed boost & mud pit
     private float originalForwardAcceleration;
@@ -73,11 +84,11 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyImmunityBoost()
     {
-        forwardAcceleration = originalForwardAcceleration * 1.2f; // Increase acceleration
-        maxSpeed = originalMaxSpeed * 1.2f; // Increase max speed
+        forwardAcceleration = originalForwardAcceleration * immunityAcceleration; // Increase acceleration
+        maxSpeed = originalMaxSpeed * immunitySpeed; // Increase max speed
 
         Vector3 boostDirection = new(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-        rb.AddForce(boostDirection.normalized * 10f, ForceMode.Impulse);
+        rb.AddForce(boostDirection.normalized * immunityBoostImpulse, ForceMode.Impulse);
 
         StartCoroutine(ResetSpeedAfterDelayFromImmunity(4f));
         
@@ -88,11 +99,11 @@ public class PlayerController : MonoBehaviour
         if (!isSpeedBoosted)
         {
             isSpeedBoosted = true;
-            forwardAcceleration = originalForwardAcceleration * 1.5f; // Increase acceleration
-            maxSpeed = originalMaxSpeed * 1.5f; // Increase max speed
+            forwardAcceleration = originalForwardAcceleration * increasedAcceleration; // Increase acceleration
+            maxSpeed = originalMaxSpeed * increasedSpeed; // Increase max speed
 
             Vector3 boostDirection = new(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-            rb.AddForce(boostDirection.normalized * 10f, ForceMode.Impulse);
+            rb.AddForce(boostDirection.normalized * SpeedBoostImpulse, ForceMode.Impulse);
 
             StartCoroutine(ResetSpeedAfterDelay(2f));
         }
@@ -107,8 +118,8 @@ public class PlayerController : MonoBehaviour
         else if (!isSlowed)
         {
             isSlowed = true;
-            forwardAcceleration = originalForwardAcceleration * 0.75f; // Reduce acceleration
-            maxSpeed = originalMaxSpeed * 0.5f; // Reduce max speed
+            forwardAcceleration = originalForwardAcceleration * reducedAcceleration; // Reduce acceleration
+            maxSpeed = originalMaxSpeed * reducedMaxSpeed; // Reduce max speed
 
             StartCoroutine(ResetSpeedAfterDelay(2f));
         }
