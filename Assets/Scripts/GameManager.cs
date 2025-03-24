@@ -1,16 +1,56 @@
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private GameObject MainMenuPanel;
+    [SerializeField] private GameObject ControlsPanel;
+    [SerializeField] private Button EasyButton;
+    [SerializeField] private Button HardButton;
+    [SerializeField] private Button ControlsButton;
+    [SerializeField] private Button ControlsBackButton;
+    private void Awake()
+    {
+        MainMenuPanel.SetActive(true);
+        ControlsPanel.SetActive(false);
+        EasyButton.onClick.AddListener(StartEasyLevel);
+        HardButton.onClick.AddListener(StartHardLevel);
+        ControlsButton.onClick.AddListener(OpenControlsMenu);
+        ControlsBackButton.onClick.AddListener(CloseControlsMenu);
+    }
     void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
+    }
+
+    private void StartEasyLevel()
+    {
+        MainMenuPanel.SetActive(false);
+        SceneManager.LoadScene("Level A");
+    }
+
+    private void StartHardLevel()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OpenControlsMenu()
     {
-        
+        MainMenuPanel.SetActive(false);
+        ControlsPanel.SetActive(true);
+    }
+
+    private void CloseControlsMenu()
+    {
+        ControlsPanel.SetActive(false);
+        MainMenuPanel.SetActive(true);
+
     }
 }
