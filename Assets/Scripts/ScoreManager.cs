@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetFloat($"{key}_{i}", scores[i]);
         }
         PlayerPrefs.Save();
+        Debug.Log("Saving time: " + newTime);
 
     }
 
@@ -37,7 +39,14 @@ public class ScoreManager : MonoBehaviour
             if (PlayerPrefs.HasKey($"{key}_{i}"))
                 scores.Add(PlayerPrefs.GetFloat($"{key}_{i}"));
         }
+        Debug.Log("Times:" + scores);
         return scores;
+    }
+
+    public static String FormatTime(float timeInSeconds)
+    {
+        TimeSpan time = TimeSpan.FromSeconds(timeInSeconds);
+        return $"{time.Minutes:00}:{time.Seconds:00}.{time.Milliseconds / 10:00}";
     }
     
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,9 @@ public class FinishManager : MonoBehaviour
     
     // end level times
     [SerializeField] private TextMeshProUGUI finalTime;
+    [SerializeField] private TextMeshProUGUI topTimes;
+    [SerializeField] private int currentLevel;
+    [SerializeField] private ScoreManager scoreManager;
 
     private void Awake()
     {
@@ -70,6 +74,18 @@ public class FinishManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         finalTime.SetText(currentTime.text);
+
+        // saving the score
+        var guiTime = Time.time - startTime;
+        scoreManager.SaveScore(currentLevel, guiTime);
+
+        // Load and display top 3 times
+        List<float> scores = scoreManager.LoadScores(currentLevel);
+        topTimes.text = "Leaderboard:\n";
+        for (int i = 0; i < scores.Count; i++)
+        {
+            topTimes.text += $"{i + 1}.  {ScoreManager.FormatTime(scores[i])}\n";
+        }
     }
 
     public void DisableEndLevelMenu()

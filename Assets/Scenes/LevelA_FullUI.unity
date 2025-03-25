@@ -2045,6 +2045,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: topTimes
+      value: 
+      objectReference: {fileID: 1335082725}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
       propertyPath: finalTime
       value: 
       objectReference: {fileID: 2098896253}
@@ -2056,6 +2060,10 @@ PrefabInstance:
       propertyPath: endLevelMenu
       value: 
       objectReference: {fileID: 1349208052}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 2000670106}
     - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
       propertyPath: BackToMainButton
       value: 
@@ -5504,7 +5512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -174}
+  m_AnchoredPosition: {x: 162, y: -174}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057876395
@@ -6023,7 +6031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 57}
+  m_AnchoredPosition: {x: 0, y: 82}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171063812
@@ -6073,15 +6081,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -6867,7 +6875,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -84}
+  m_AnchoredPosition: {x: -160, y: -174}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1302790608
@@ -7242,7 +7250,7 @@ GameObject:
   - component: {fileID: 1335082726}
   - component: {fileID: 1335082725}
   m_Layer: 5
-  m_Name: TopTimes
+  m_Name: Leaderboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7264,7 +7272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -56}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1335082725
@@ -7287,7 +7295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Top Times:'
+  m_text: 'Leaderboard:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7314,8 +7322,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10885,6 +10893,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd41dfe55324c746bca4f740e5a404d, type: 3}
+--- !u!1 &2000670105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000670107}
+  - component: {fileID: 2000670106}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2000670106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000670105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c371f94d255730c488c2103679d15ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2000670107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000670105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 538.2529, y: 281.2241, z: 1.8683989}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2027491188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11395,7 +11447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: 57}
+  m_AnchoredPosition: {x: 31, y: 82}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098896253
@@ -11445,8 +11497,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11909,6 +11961,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: topTimes
+      value: 
+      objectReference: {fileID: 1335082725}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
       propertyPath: finalTime
       value: 
       objectReference: {fileID: 2098896253}
@@ -11920,6 +11976,10 @@ PrefabInstance:
       propertyPath: endLevelMenu
       value: 
       objectReference: {fileID: 1349208052}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: scoreManager
+      value: 
+      objectReference: {fileID: 2000670106}
     - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
       propertyPath: BackToMainButton
       value: 
@@ -11949,5 +12009,6 @@ SceneRoots:
   - {fileID: 267765080}
   - {fileID: 1019442720}
   - {fileID: 1951328855}
+  - {fileID: 2000670107}
   - {fileID: 2052347354}
   - {fileID: 286029575}
