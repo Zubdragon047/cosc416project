@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private float originalMaxSpeed;
     private bool isSpeedBoosted = false;
     private bool isSlowed = false;
+    public bool running = false;
 
     // for the immunity power Update
     private bool immunityActivated = false;
@@ -37,12 +38,20 @@ public class PlayerController : MonoBehaviour
         originalForwardAcceleration = forwardAcceleration;
         originalMaxSpeed = maxSpeed;
 
-        rb.centerOfMass = new Vector3(0, -0.4f, 0);
+        rb.centerOfMass = new Vector3(0, -0.2f, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (running)
+        {
+            if (rb.linearVelocity.x < maxSpeed && rb.linearVelocity.x > -maxSpeed)
+            {
+                rb.AddForce(Vector3.right * forwardAcceleration);
+            }
+
+        }
         
     }
     public void MovePlayer(Vector3 input)
@@ -59,6 +68,11 @@ public class PlayerController : MonoBehaviour
     public void RotatePlayer(int rotate)
     {
         rb.AddTorque(new Vector3(0, 0, rotate * rotationTorque));
+    }
+
+    public void OnRun(bool isRunning)
+    {
+        running = isRunning;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -434,7 +434,7 @@ PrefabInstance:
     - target: {fileID: 2474432765367741093, guid: 530e4493877e93840a8698b49cc14649, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 36eeaaa34ae4fbd488dfb4951f7266f1, type: 2}
+      objectReference: {fileID: 13400000, guid: 4961a89a855df814cb70890e4e0920f3, type: 2}
     - target: {fileID: 8766222552290888532, guid: 530e4493877e93840a8698b49cc14649, type: 3}
       propertyPath: m_Name
       value: FullTrackRampSmall
@@ -1442,29 +1442,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4467700765219983775, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: m_Drag
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467700765219983775, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467700765219983775, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4643376342829145234, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577221882113227616, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: maxSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577221882113227616, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: forwardAcceleration
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2770,7 +2750,7 @@ PrefabInstance:
     - target: {fileID: 821664615580304714, guid: 42dddf16fe7c669499e27df7bef31237, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 36eeaaa34ae4fbd488dfb4951f7266f1, type: 2}
+      objectReference: {fileID: 13400000, guid: 4961a89a855df814cb70890e4e0920f3, type: 2}
     - target: {fileID: 1519092833163610739, guid: 42dddf16fe7c669499e27df7bef31237, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.33
@@ -4763,7 +4743,7 @@ PrefabInstance:
     - target: {fileID: 8870422693109615062, guid: d770c7a412fd5a84281ce87ff1601d4b, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 13400000, guid: 36eeaaa34ae4fbd488dfb4951f7266f1, type: 2}
+      objectReference: {fileID: 13400000, guid: 4961a89a855df814cb70890e4e0920f3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7144,7 +7124,7 @@ GameObject:
   - component: {fileID: 1833976559}
   m_Layer: 0
   m_Name: Track
-  m_TagString: Untagged
+  m_TagString: Track
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
