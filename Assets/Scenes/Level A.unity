@@ -1442,37 +1442,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4467700765219983775, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: m_Drag
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467700765219983775, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4467700765219983775, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4643376342829145234, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4647127845819711621, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: maxSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4647127845819711621, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: forwardAcceleration
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577221882113227616, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: maxSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5577221882113227616, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
-      propertyPath: forwardAcceleration
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7152,7 +7124,7 @@ GameObject:
   - component: {fileID: 1833976559}
   m_Layer: 0
   m_Name: Track
-  m_TagString: Untagged
+  m_TagString: Track
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
