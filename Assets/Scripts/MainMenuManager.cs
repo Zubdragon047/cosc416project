@@ -26,7 +26,7 @@ public class MainMenuManager : MonoBehaviour
     private void StartEasyLevel()
     {
         MainMenuPanel.SetActive(false);
-        SceneManager.LoadScene("Level A");
+        SceneManager.LoadScene("LevelA_FullUI");
     }
 
     private void StartHardLevel()

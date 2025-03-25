@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-
     [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject pauseMenu;
     private bool isPauseMenuActive;
@@ -15,7 +14,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        // for the Pause Menu
+        // for pause menu
         inputManager.OnPauseMenu.AddListener(TogglePauseMenu);
         DisablePauseMenu();
         restartLevelButton.onClick.AddListener(RestartLevel);
@@ -48,13 +47,13 @@ public class LevelManager : MonoBehaviour
         isPauseMenuActive = false;
     }
 
-    private void RestartLevel()
+    public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
-    private void GoToMainMenu()
+    public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
