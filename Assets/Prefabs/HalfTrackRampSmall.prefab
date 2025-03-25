@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 5052025789556515397}
   m_Layer: 0
   m_Name: Ramp
-  m_TagString: Untagged
+  m_TagString: Ramp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6295071856007930369}
-  m_Material: {fileID: 13400000, guid: 36eeaaa34ae4fbd488dfb4951f7266f1, type: 2}
+  m_Material: {fileID: 13400000, guid: 4961a89a855df814cb70890e4e0920f3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
