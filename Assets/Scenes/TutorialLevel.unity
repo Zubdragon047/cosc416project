@@ -6934,6 +6934,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: endLevelMenu
+      value: 
+      objectReference: {fileID: 1349208052}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: BackToMainButton
+      value: 
+      objectReference: {fileID: 1057876395}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: ReplayLevelButton
+      value: 
+      objectReference: {fileID: 652801492}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6962,6 +6974,8 @@ MonoBehaviour:
   BackToMainButton: {fileID: 1057876395}
   ReplayLevelButton: {fileID: 652801492}
   endLevelMenu: {fileID: 1349208052}
+  currentTime: {fileID: 0}
+  finalTime: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
