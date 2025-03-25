@@ -171,8 +171,8 @@ MonoBehaviour:
   ControlsBackButton: {fileID: 136222624}
   TutorialButton: {fileID: 1656383168}
   scoreManager: {fileID: 650316743}
-  HighScoresLevel1: {fileID: 349843511}
-  HighScoresLevel2: {fileID: 1834407710}
+  HighScoresLevel1: {fileID: 1834407710}
+  HighScoresLevel2: {fileID: 349843511}
 --- !u!1 &136222622
 GameObject:
   m_ObjectHideFlags: 0
