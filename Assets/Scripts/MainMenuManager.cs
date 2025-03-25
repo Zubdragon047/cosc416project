@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject MainMenuPanel;
     [SerializeField] private GameObject ControlsPanel;
@@ -19,15 +19,6 @@ public class GameManager : MonoBehaviour
         HardButton.onClick.AddListener(StartHardLevel);
         ControlsButton.onClick.AddListener(OpenControlsMenu);
         ControlsBackButton.onClick.AddListener(CloseControlsMenu);
-    }
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
     }
 
     private void StartEasyLevel()
