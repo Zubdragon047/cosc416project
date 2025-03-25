@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8917589496427820466}
+  - {fileID: 5315181057560412597}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4949517080307516131
@@ -142,10 +143,86 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputManager: {fileID: 407624445223296912}
   rb: {fileID: 4949517080307516131}
-  forwardAcceleration: 20
+  forwardAcceleration: 22
   sidewaysAcceleration: 7
-  maxSpeed: 15
+  maxSpeed: 12
+  increasedAcceleration: 1.2
+  increasedSpeed: 1.2
+  SpeedBoostImpulse: 10
+  reducedAcceleration: 0.75
+  reducedMaxSpeed: 0.75
   rotationTorque: 3
+  immunityAcceleration: 1.2
+  immunitySpeed: 1.2
+  immunityBoostImpulse: 10
+--- !u!1 &8448293976209026983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5315181057560412597}
+  - component: {fileID: 4831074938995727646}
+  - component: {fileID: 4988235324032728866}
+  m_Layer: 0
+  m_Name: RolloverTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5315181057560412597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448293976209026983}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1420123634247185528}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4831074938995727646
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448293976209026983}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7180371, y: 0.26017785, z: 0.88353455}
+  m_Center: {x: 0.12366986, y: 0.5993881, z: -0.013438284}
+--- !u!114 &4988235324032728866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8448293976209026983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de5765258c18254e9a91b4458253927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4949517080307516131}
+  flipUprightForce: 1
 --- !u!1001 &8917589496427615746
 PrefabInstance:
   m_ObjectHideFlags: 0
