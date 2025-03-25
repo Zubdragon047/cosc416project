@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -14,6 +16,14 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button ControlsButton;
     [SerializeField] private Button ControlsBackButton;
     [SerializeField] private Button TutorialButton;
+
+    // high scores
+    [SerializeField] private ScoreManager scoreManager;
+    private int levelOne = 1;
+    private int levelTwo = 2;
+    [SerializeField] private TextMeshProUGUI HighScoresLevel1;
+    [SerializeField] private TextMeshProUGUI HighScoresLevel2;
+
     private void Awake()
     {
         MainMenuPanel.SetActive(true);
@@ -23,6 +33,19 @@ public class MainMenuManager : MonoBehaviour
         ControlsButton.onClick.AddListener(OpenControlsMenu);
         ControlsBackButton.onClick.AddListener(CloseControlsMenu);
         TutorialButton.onClick.AddListener(StartTutorial);
+
+        // getting the high scores
+        List<float> scoresOne = scoreManager.LoadScores(levelOne);
+        for (int i = 0; i < scoresOne.Count; i++)
+        {
+            HighScoresLevel1.text += $"{i + 1}.  {ScoreManager.FormatTime(scoresOne[i])}\n";
+        }
+        List<float> scoresTwo = scoreManager.LoadScores(levelTwo);
+        for (int i = 0; i < scoresTwo.Count; i++)
+        {
+            HighScoresLevel2.text += $"{i + 1}.  {ScoreManager.FormatTime(scoresTwo[i])}\n";
+        }
+
     }
 
     private void StartEasyLevel()

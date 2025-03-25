@@ -2057,6 +2057,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 887052942}
     - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8879859643127342890, guid: 387f9c554d173c848a6007bdc5c82f4a, type: 3}
       propertyPath: endLevelMenu
       value: 
       objectReference: {fileID: 1349208052}
