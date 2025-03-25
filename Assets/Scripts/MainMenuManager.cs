@@ -13,6 +13,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private Button HardButton;
     [SerializeField] private Button ControlsButton;
     [SerializeField] private Button ControlsBackButton;
+    [SerializeField] private Button TutorialButton;
     private void Awake()
     {
         MainMenuPanel.SetActive(true);
@@ -21,6 +22,7 @@ public class MainMenuManager : MonoBehaviour
         HardButton.onClick.AddListener(StartHardLevel);
         ControlsButton.onClick.AddListener(OpenControlsMenu);
         ControlsBackButton.onClick.AddListener(CloseControlsMenu);
+        TutorialButton.onClick.AddListener(StartTutorial);
     }
 
     private void StartEasyLevel()
@@ -32,6 +34,12 @@ public class MainMenuManager : MonoBehaviour
     private void StartHardLevel()
     {
         
+    }
+
+    private void StartTutorial()
+    {
+        MainMenuPanel.SetActive(false);
+        SceneManager.LoadScene("TutorialLevel");
     }
 
     private void OpenControlsMenu()
