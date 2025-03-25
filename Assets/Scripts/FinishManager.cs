@@ -5,11 +5,13 @@ using UnityEngine.UI;
 public class FinishManager : MonoBehaviour
 {
     [SerializeField] private Button BackToMainButton;
+    [SerializeField] private Button ReplayLevelButton;
     [SerializeField] private GameObject endLevelMenu;
 
     private void Awake()
     {
         BackToMainButton.onClick.AddListener(BackToMain);
+        ReplayLevelButton.onClick.AddListener(ReplayLevel);
         DisableEndLevelMenu();
     }
 
@@ -40,5 +42,10 @@ public class FinishManager : MonoBehaviour
     private void BackToMain()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void ReplayLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
