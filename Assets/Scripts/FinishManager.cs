@@ -13,6 +13,9 @@ public class FinishManager : MonoBehaviour
     private bool timeStarted = false;
     private float startTime;
     [SerializeField] private TextMeshProUGUI currentTime;
+    
+    // end level times
+    [SerializeField] private TextMeshProUGUI finalTime;
 
     private void Awake()
     {
@@ -64,6 +67,7 @@ public class FinishManager : MonoBehaviour
         endLevelMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        finalTime.SetText(currentTime.text);
     }
 
     public void DisableEndLevelMenu()
