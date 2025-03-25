@@ -129,6 +129,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnRun:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4647127845819711621}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4647127845819711621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +170,7 @@ MonoBehaviour:
   immunityAcceleration: 1.2
   immunitySpeed: 1.2
   immunityBoostImpulse: 10
+  running: 0
 --- !u!1 &8448293976209026983
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4949517080307516131}
-  flipUprightForce: 1
+  flipUprightForce: 0.75
 --- !u!1001 &8917589496427615746
 PrefabInstance:
   m_ObjectHideFlags: 0
