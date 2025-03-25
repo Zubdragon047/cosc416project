@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
     public UnityEvent<Vector3> OnMove = new UnityEvent<Vector3>();
     public UnityEvent<int> OnRotate = new UnityEvent<int>();
     public UnityEvent<bool> OnRun = new UnityEvent<bool>();
+    public UnityEvent OnPauseMenu = new();
     bool isRunning = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,8 +33,14 @@ public class InputManager : MonoBehaviour
             rotate = 1;
         if (Input.GetKey(KeyCode.D))
             rotate = -1;
-        if (Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
+        {
             isRunning = true;
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            OnPauseMenu?.Invoke();
+        }
 
         OnRun?.Invoke(isRunning);
         OnMove?.Invoke(input);
