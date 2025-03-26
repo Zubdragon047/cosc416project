@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public bool IsPauseMenuActive => isPauseMenuActive;
     [SerializeField] private Button restartLevelButton;
     [SerializeField] private Button mainMenuButton;
+    [SerializeField] private GameObject pressSpacePrompt;
 
     private void Awake()
     {
@@ -20,6 +21,16 @@ public class LevelManager : MonoBehaviour
         restartLevelButton.onClick.AddListener(RestartLevel);
         mainMenuButton.onClick.AddListener(GoToMainMenu);
 
+        // for initial prompt
+        inputManager.OnLevelStart.AddListener(DisablePressSpacePrompt);
+        pressSpacePrompt.SetActive(true);
+
+    }
+
+    // initial prompt to press Space
+    private void DisablePressSpacePrompt()
+    {
+        pressSpacePrompt.SetActive(false);
     }
 
     // Controlling Pause Menu in the levels
@@ -47,6 +58,7 @@ public class LevelManager : MonoBehaviour
         isPauseMenuActive = false;
     }
 
+    // button functions
     public void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
