@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.65600586, y: 0.16919388, z: 9.96092}
-  m_Center: {x: 0.2617798, y: 0, z: 0.033745766}
+  m_Size: {x: 0.65600586, y: 10, z: 9.96092}
+  m_Center: {x: 0.2617798, y: 5, z: 0.033745766}
 --- !u!114 &8879859643127342890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,8 +68,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BackToMainButton: {fileID: 0}
+  ReplayLevelButton: {fileID: 0}
   endLevelMenu: {fileID: 0}
   currentTime: {fileID: 0}
+  finalTime: {fileID: 0}
+  topTimes: {fileID: 0}
+  currentLevel: 0
+  scoreManager: {fileID: 0}
 --- !u!1001 &3167708763923026423
 PrefabInstance:
   m_ObjectHideFlags: 0
