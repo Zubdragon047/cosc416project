@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     public UnityEvent<bool> OnRun = new UnityEvent<bool>();
     public UnityEvent OnPauseMenu = new();
     public UnityEvent OnLevelStart = new();
+    public UnityEvent OnStartDust = new();
     bool isRunning = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,6 +39,7 @@ public class InputManager : MonoBehaviour
         {
             isRunning = true;
             OnLevelStart?.Invoke();
+            OnStartDust?.Invoke();
         }
         if(Input.GetKeyDown(KeyCode.P))
         {
