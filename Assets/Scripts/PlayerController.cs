@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     // for the immunity power Update
     private bool immunityActivated = false;
+    [SerializeField] private GameObject immunityParticles;
+    //private GameObject immunityParticlesInstance;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,7 +52,14 @@ public class PlayerController : MonoBehaviour
             {
                 rb.AddForce(Vector3.right * forwardAcceleration);
             }
-
+        }
+        if(immunityActivated)
+        {
+            //immunityParticlesInstance = Instantiate(immunityParticles, gameObject.transform.position, Quaternion.identity);
+            //Destroy(immunityParticlesInstance.gameObject, 1);
+            immunityParticles.SetActive(true);
+        }else{
+            immunityParticles.SetActive(false);
         }
         
     }

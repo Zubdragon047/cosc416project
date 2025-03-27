@@ -1031,7 +1031,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 1
-      repeatInterval: 100
+      repeatInterval: 0.01
       probability: 1
   SizeModule:
     enabled: 1
