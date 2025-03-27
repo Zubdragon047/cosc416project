@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject dustParticles1;
     [SerializeField] private GameObject dustParticles2;
 
+    // for speed boost trail
+    [SerializeField] private GameObject speedBoostTrail;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
         rb.centerOfMass = new Vector3(0, -0.2f, 0);
         dustParticles1.SetActive(false);
         dustParticles2.SetActive(false);
+        speedBoostTrail.SetActive(false);
     }
 
     // Update is called once per frame
@@ -66,6 +70,13 @@ public class PlayerController : MonoBehaviour
             immunityParticles.SetActive(true);
         }else{
             immunityParticles.SetActive(false);
+        }
+
+        if(isSpeedBoosted)
+        {
+            speedBoostTrail.SetActive(true);
+        }else{
+            speedBoostTrail.SetActive(false);
         }
         
     }
