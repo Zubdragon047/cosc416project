@@ -1767,6 +1767,10 @@ PrefabInstance:
       propertyPath: currentTime
       value: 
       objectReference: {fileID: 887052942}
+    - target: {fileID: 976239788634761754, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1951328854}
     - target: {fileID: 1420123634247185528, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1811,6 +1815,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4647127845819711621, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+      propertyPath: speedBoostTrail
+      value: 
+      objectReference: {fileID: 231875074}
+    - target: {fileID: 4647127845819711621, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+      propertyPath: immunityParticles
+      value: 
+      objectReference: {fileID: 231875075}
+    - target: {fileID: 4988235324032728866, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+      propertyPath: explosionParticles
+      value: 
+      objectReference: {fileID: 8180951623508153654, guid: e2c2ae1c70c7beb419edd059e462aba6, type: 3}
+    - target: {fileID: 5846660784571391023, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+      propertyPath: inputManager
+      value: 
+      objectReference: {fileID: 1951328854}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1832,6 +1852,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ce44b663b03ac246b1524d003e4f413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &231875074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8680822815523622005, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+  m_PrefabInstance: {fileID: 231875071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &231875075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2016754899134877948, guid: a0a3f116c31491c4887ff84bfc0a6fd6, type: 3}
+  m_PrefabInstance: {fileID: 231875071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &249350866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11277,6 +11307,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnLevelStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartDust:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1951328855
