@@ -39,7 +39,7 @@ public class InputManager : MonoBehaviour
             isRunning = true;
             OnLevelStart?.Invoke();
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.P))
         {
             OnPauseMenu?.Invoke();
         }
