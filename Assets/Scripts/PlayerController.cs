@@ -32,7 +32,11 @@ public class PlayerController : MonoBehaviour
     // for the immunity power Update
     private bool immunityActivated = false;
     [SerializeField] private GameObject immunityParticles;
-    //private GameObject immunityParticlesInstance;
+
+    // for dust particles
+    [SerializeField] private GameObject dustParticles1;
+    [SerializeField] private GameObject dustParticles2;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +45,8 @@ public class PlayerController : MonoBehaviour
         originalMaxSpeed = maxSpeed;
 
         rb.centerOfMass = new Vector3(0, -0.2f, 0);
+        dustParticles1.SetActive(false);
+        dustParticles2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -53,16 +59,35 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(Vector3.right * forwardAcceleration);
             }
         }
+
+        // for immunity particle effects
         if(immunityActivated)
         {
-            //immunityParticlesInstance = Instantiate(immunityParticles, gameObject.transform.position, Quaternion.identity);
-            //Destroy(immunityParticlesInstance.gameObject, 1);
             immunityParticles.SetActive(true);
         }else{
             immunityParticles.SetActive(false);
         }
         
     }
+/*
+    private void OnCollisionStay(Collision collision)
+    {
+        if(running){
+            dustParticles1.SetActive(true);
+            dustParticles2.SetActive(true);
+        }else{
+            dustParticles1.SetActive(false);
+            dustParticles2.SetActive(false);
+        }
+    }
+    
+    private void OnCollisionExit(Collision collision)
+    {
+            dustParticles1.SetActive(false);
+            dustParticles2.SetActive(false);
+    }
+    */
+
     public void MovePlayer(Vector3 input)
     {
         Vector3 inputforward = new(input.x, 0, 0);
@@ -164,5 +189,4 @@ public class PlayerController : MonoBehaviour
         maxSpeed = originalMaxSpeed;
         immunityActivated = false;
     }
-
 }

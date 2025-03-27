@@ -8,12 +8,8 @@ public class RolloverTrigget : MonoBehaviour
     private GameObject explosionParticlesInstance;
     private void OnTriggerStay(Collider other)
     {
-        //explosionParticlesInstance = Instantiate(explosionParticles, other.transform.position, Quaternion.identity);
-       // Destroy(explosionParticlesInstance.gameObject, 1);
         rb.linearVelocity = Vector3.zero;
         rb.AddTorque(new Vector3(0, 0, -flipUprightForce), ForceMode.Impulse);
-        //explosionParticlesInstance = Instantiate(explosionParticles, other.transform.position, Quaternion.identity);
-        //Destroy(explosionParticlesInstance.gameObject, 1);
     }
 
     private void OnTriggerEnter(Collider other)
