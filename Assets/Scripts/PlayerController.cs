@@ -33,10 +33,6 @@ public class PlayerController : MonoBehaviour
     private bool immunityActivated = false;
     [SerializeField] private GameObject immunityParticles;
 
-    // for dust particles
-    [SerializeField] private GameObject dustParticles1;
-    [SerializeField] private GameObject dustParticles2;
-
     // for speed boost trail
     [SerializeField] private GameObject speedBoostTrail;
 
@@ -48,8 +44,8 @@ public class PlayerController : MonoBehaviour
         originalMaxSpeed = maxSpeed;
 
         rb.centerOfMass = new Vector3(0, -0.2f, 0);
-        dustParticles1.SetActive(false);
-        dustParticles2.SetActive(false);
+        
+        //for speed boost trail
         speedBoostTrail.SetActive(false);
     }
 
@@ -80,24 +76,6 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-/*
-    private void OnCollisionStay(Collision collision)
-    {
-        if(running){
-            dustParticles1.SetActive(true);
-            dustParticles2.SetActive(true);
-        }else{
-            dustParticles1.SetActive(false);
-            dustParticles2.SetActive(false);
-        }
-    }
-    
-    private void OnCollisionExit(Collision collision)
-    {
-            dustParticles1.SetActive(false);
-            dustParticles2.SetActive(false);
-    }
-    */
 
     public void MovePlayer(Vector3 input)
     {

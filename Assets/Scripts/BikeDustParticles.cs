@@ -10,24 +10,20 @@ public class BikeDustParticles : MonoBehaviour
     private void Awake()
     {
         inputManager.OnStartDust.AddListener(ActivateDustParticles);
-        //hitParticles.SetActive(false);
     }
 
     private void ActivateDustParticles()
     {
         isLevelStarted = true;
-       // Debug.Log("activated dust");
     }
 
     
         private void OnTriggerStay(Collider other)
         {
-            //Debug.Log("triggered");
             if(isLevelStarted)
             {
                 hitParticlesInstance = Instantiate(hitParticles, transform.position, Quaternion.identity);
-                Destroy(hitParticlesInstance.gameObject, 1);
-               // hitParticles.SetActive(true);
+                Destroy(hitParticlesInstance.gameObject, 0.2f);
             }
         }
     
