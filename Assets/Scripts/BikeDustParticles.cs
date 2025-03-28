@@ -7,6 +7,9 @@ public class BikeDustParticles : MonoBehaviour
     [SerializeField] private InputManager inputManager;
     private bool isLevelStarted = false;
 
+    [SerializeField] private GameObject mudParticles;
+    private GameObject mudParticlesInstance;
+
     private void Awake()
     {
         inputManager.OnStartDust.AddListener(ActivateDustParticles);
@@ -18,13 +21,30 @@ public class BikeDustParticles : MonoBehaviour
     }
 
     
-        private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
+    {
+        if(isLevelStarted)
         {
-            if(isLevelStarted)
-            {
-                hitParticlesInstance = Instantiate(hitParticles, transform.position, Quaternion.identity);
-                Destroy(hitParticlesInstance.gameObject, 0.2f);
-            }
+            hitParticlesInstance = Instantiate(hitParticles, transform.position, Quaternion.identity);
+            Destroy(hitParticlesInstance.gameObject, 0.2f);
         }
-    
+        if(other.CompareTag("MudPit"))
+        {
+            mudParticlesInstance = Instantiate(mudParticles, transform.position, Quaternion.identity);
+            Destroy(mudParticlesInstance.gameObject, 0.5f);
+        }
+        }
+/*
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("MudPit"))
+        {
+            mudParticlesInstance = Instantiate(mudParticles, transform.position, Quaternion.identity);
+            Destroy(mudParticlesInstance.gameObject, 1);
+        }
+    }
+
+*/
+
+
 }

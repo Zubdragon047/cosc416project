@@ -4910,6 +4910,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitParticles: {fileID: 3631296120938560014, guid: 3b051983e5ac324499b96868bfc5b9d0, type: 3}
   inputManager: {fileID: 0}
+  mudParticles: {fileID: 0}
 --- !u!1 &4643376342829145234
 GameObject:
   m_ObjectHideFlags: 0
@@ -4949,6 +4950,7 @@ Transform:
   - {fileID: 4669056616901986963}
   - {fileID: 3639072137565673338}
   - {fileID: 5350375086858080427}
+  - {fileID: 586270969409354727}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4949517080307516131
@@ -5164,6 +5166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitParticles: {fileID: 3631296120938560014, guid: 3b051983e5ac324499b96868bfc5b9d0, type: 3}
   inputManager: {fileID: 0}
+  mudParticles: {fileID: 0}
 --- !u!1 &8448293976209026983
 GameObject:
   m_ObjectHideFlags: 0
@@ -5382,6 +5385,72 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!1001 &2403467495010059697
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1420123634247185528}
+    m_Modifications:
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.966
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683692095130767400, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_Name
+      value: MudSplatter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683692095130767400, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+--- !u!4 &586270969409354727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2988154454399876694, guid: b07d5d030c83fc64bb81f1d989ebccc6, type: 3}
+  m_PrefabInstance: {fileID: 2403467495010059697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8734309479611775101
 PrefabInstance:
   m_ObjectHideFlags: 0
