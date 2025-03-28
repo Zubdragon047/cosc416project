@@ -5008,7 +5008,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4643376342829145234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e62530461247cbf41889ae35a7ff6c80, type: 3}
   m_Name: 
@@ -5082,8 +5082,8 @@ MonoBehaviour:
   inputManager: {fileID: 407624445223296912}
   rb: {fileID: 4949517080307516131}
   forwardAcceleration: 22
-  sidewaysAcceleration: 7
-  maxSpeed: 12
+  sidewaysAcceleration: 8
+  maxSpeed: 16
   increasedAcceleration: 1.2
   increasedSpeed: 1.2
   SpeedBoostImpulse: 10

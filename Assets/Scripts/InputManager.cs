@@ -27,10 +27,6 @@ public class InputManager : MonoBehaviour
             input += Vector3.forward;
         if (Input.GetKey(KeyCode.S))
             input += Vector3.back;
-        if (Input.GetKey(KeyCode.LeftArrow))
-            input += Vector3.left;
-        if (Input.GetKey(KeyCode.RightArrow))
-            input += Vector3.right;
         if (Input.GetKey(KeyCode.A))
             rotate = 1;
         if (Input.GetKey(KeyCode.D))
