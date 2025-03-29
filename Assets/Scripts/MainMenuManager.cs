@@ -64,6 +64,7 @@ public class MainMenuManager : MonoBehaviour
     {
         MainMenuPanel.SetActive(false);
         SceneManager.LoadScene("TutorialLevel");
+        AudioManager.Instance.PlayMusic("tutorial-music");
     }
 
     private void OpenControlsMenu()

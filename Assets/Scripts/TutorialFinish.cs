@@ -84,10 +84,12 @@ public class TutorialFinish : MonoBehaviour
     private void BackToMain()
     {
         SceneManager.LoadScene("MainMenu");
+        AudioManager.Instance.PlayMusic("main-music");
     }
 
     private void ReplayLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        AudioManager.Instance.PlayMusic("tutorial-music");
     }
 }
