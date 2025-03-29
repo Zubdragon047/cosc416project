@@ -71,6 +71,8 @@ public class TutorialFinish : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         finalTime.SetText(currentTime.text);
+        AudioManager.Instance.musicSource.Stop();
+        AudioManager.Instance.PlaySFX("completion-sfx");
     }
 
     public void DisableEndLevelMenu()

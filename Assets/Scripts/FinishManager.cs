@@ -86,6 +86,8 @@ public class FinishManager : MonoBehaviour
         {
             topTimes.text += $"{i + 1}.  {ScoreManager.FormatTime(scores[i])}\n";
         }
+        AudioManager.Instance.musicSource.Stop();
+        AudioManager.Instance.PlaySFX("completion-sfx");
     }
 
     public void DisableEndLevelMenu()
@@ -99,6 +101,7 @@ public class FinishManager : MonoBehaviour
     private void BackToMain()
     {
         SceneManager.LoadScene("MainMenu");
+        AudioManager.Instance.PlayMusic("main-music");
     }
 
     private void ReplayLevel()
